@@ -43,13 +43,8 @@ namespace WinFormsMiniProject
                 Addresses = addresses.ToList()
             };
 
-            string addressText = "";
-            for (int i = 0; i < addresses.Count; i++)
-            {
-                addressText += addresses[i].AddressValue + "\n";
-            }
+            Save.ToTextFile(person);
 
-            File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\peopleInfo.txt", $"{person.FirstName} {person.LastName}\nIs Active: {person.IsActive}\nAddresses:\n{addressText}\n");
             firstNameText.Text = "";
             lastNameText.Text = "";
             emailText.Text = "";
